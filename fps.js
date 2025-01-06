@@ -3,6 +3,9 @@ let fps = 0;
 let averageFps = 0;
 const fpsDisplay = document.getElementById('fps');
 const avgFpsDisplay = document.getElementById('avgFps');
+const killSpan = document.getElementById('kill');
+let elements = 3
+
 let kill=2
 
 const fpsArray = [];
@@ -41,12 +44,14 @@ function degradePerformance() {
     const container = document.createElement("div");
     document.body.appendChild(container);
     interval = setInterval(() => {
-        for (let i = 0; i < 300; i++) {
+        for (let i = 0; i < 600; i++) {
             const div = document.createElement("div");
             container.appendChild(div);
+            elements++
+            killSpan.textContent = `Elements: ${elements}`;
         }
-        console.log("Added 300 elements.");
-    }, 10); // Adds 300 divs every 10ms
+        console.log("Added 600 elements.");
+    }, 10); // Adds 600 divs every 10ms
 }
 
 requestAnimationFrame(calculateFPS); // Start the loop
