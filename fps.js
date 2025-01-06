@@ -4,6 +4,7 @@ let averageFps = 0;
 const fpsDisplay = document.getElementById('fps');
 const avgFpsDisplay = document.getElementById('avgFps');
 const killSpan = document.getElementById('kill');
+const button=document.getElementById('degrade')
 let elements = 3
 
 let kill=2
@@ -35,12 +36,18 @@ function calculateFPS(timestamp) {
 
 window.addEventListener('keydown', function(e){
     if (e.key == ' ') {
-        degradePerformance()
+        button.style.opacity = 1;
+        button.style.display = 'block';
 
     }
 })
+
+button.addEventListener('click', degradePerformance);
+
 let interval;
 function degradePerformance() {
+    button.style.opacity = 0;
+    button.style.display = 'none';
     const container = document.createElement("div");
     document.body.appendChild(container);
     interval = setInterval(() => {
