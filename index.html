@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FPS Counter</title>
+    <style>
+        #fps {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            font-size: 20px;
+            color: white;
+            transform: translate(-50%, -50%);
+            padding: 5px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 100px;
+            animation: myAnimation 1s infinite;
+            
+        }
+        #avgFps {
+            position: fixed;
+            top: 30%;
+            left: 50%;
+            font-size: 15px;
+            color: white;
+            transform: translate(-50%, -50%);
+            padding: 5px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 60px;
+
+            animation: myAnimation 10s infinite;
+            
+        }
+
+        @keyframes myAnimation {
+            0% { color: red; }
+            14% { color: orange; }
+            28% { color: yellow; }
+            42% { color: rgb(0, 255, 0); }
+            56% { color: blue; }
+            70% { color: rgb(149, 0, 255); }
+            84% { color: rgb(255, 0, 255); }
+            100% { color: red; }
+        }
+          
+
+    </style>
+</head>
+<body>
+    <div id="fps">FPS: 0</div>
+    <div id="avgFps">AVERAGE FPS: 0</div>
+
+    <script src="fps.js"></script>
+</body>
+</html>
